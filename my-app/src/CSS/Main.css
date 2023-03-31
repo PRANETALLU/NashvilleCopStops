@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.Main {
+    height: 70vh;
+}
+
 #description {
     margin-top: 2%;
     margin-bottom: 1.5%;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
 }
 #imgGraphV {
     width: 50px;
