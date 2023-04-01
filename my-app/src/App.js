@@ -8,9 +8,8 @@ import GeoVisualization from './pages/GeoVisualization';
 import GraphVisualization from './pages/GraphVisualization';
 import './CSS/Header.css';
 import './CSS/Main.css';
-import './CSS/Main.css';
+import './CSS/Footer.css';
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-
 
 function App() {
   return (
