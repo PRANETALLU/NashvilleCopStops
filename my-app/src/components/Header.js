@@ -7,7 +7,7 @@ function Header() {
             <Button
             href="/graphVisualization"
             sx=
-            {{mt: -1, mr: 3, 
+            {{mt: -1, mr: 6, 
             fontWeight: 700, fontSize: 23, 
             color: "white", 
             ":hover":{color: "#D9D9D9"}}}>
@@ -16,7 +16,7 @@ function Header() {
 
             <Button 
             href="/geoVisualization"
-            sx={{mt: -1, mr: 3, 
+            sx={{mt: -1, mr: 6, 
             fontWeight: 700, fontSize: 23, 
             color: "white", 
             ":hover":{color: "#D9D9D9"}}}>
@@ -25,7 +25,7 @@ function Header() {
 
             <Button 
             href="/databaseSearch"
-            sx={{mt: -1, mr: 3, 
+            sx={{mt: -1, mr: 4, 
             fontWeight: 700, fontSize: 23, 
             color: "white", 
             ":hover":{color: "#D9D9D9"}}}>
