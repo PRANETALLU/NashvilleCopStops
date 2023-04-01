@@ -10,8 +10,8 @@ import { CardContent, Typography } from '@mui/material';
 function Main() {
     return (
         <div className="Main">
-            <p id="description">An informational database meant to help you understand the relationship between police and
-                <br />the community of Nashville, Tennessee.</p>
+           <p id="description">An informational database meant to help you understand the relationship between police and
+                <br />the community of Nashville, Tennessee.</p> 
             <Stack direction="row" justifyContent={'center'} marginTop={6}>
                 <Card sx={{ backgroundColor: "white", width: 300, height: 400, boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.2)'}}>
                     <Box mt={(8)}>

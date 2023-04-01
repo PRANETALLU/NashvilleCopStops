@@ -13,5 +13,10 @@
     margin-left: 1.5%;
     margin-top: 2.5%;
     color: white;
+    text-decoration: none;
+    outline: none;
 }
-
+.noLink {
+    text-decoration: none;
+    outline: none;
+}
