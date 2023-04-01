@@ -9,6 +9,8 @@ import GraphVisualization from './pages/GraphVisualization';
 import './CSS/Header.css';
 import './CSS/Main.css';
 import './CSS/Footer.css';
+import './CSS/DatabaseSearch.css';
+import './CSS/GraphVisualization.css';
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 function App() {
