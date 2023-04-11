@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { CardContent, Typography } from '@mui/material';
+import { CardContent, MenuItem, Typography } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Radio from '@mui/material/Radio';
@@ -121,6 +121,10 @@ function DatabaseSearch() {
                         Race
                     </Typography>
                     <Select size="small" sx={{ width: "150px", marginLeft: 1.5 }}>
+                        <MenuItem value="White">White</MenuItem>
+                        <MenuItem value="Black">Black</MenuItem>
+                        <MenuItem value="Hispanic">Hispanic</MenuItem>
+                        <MenuItem value="Other">Other</MenuItem>
                     </Select>
                 </Stack>
                 <Stack direction="row" marginLeft={2} marginTop={2}>
@@ -128,6 +132,8 @@ function DatabaseSearch() {
                         Sex
                     </Typography>
                     <Select size="small" sx={{ width: "150px", marginLeft: 1.5 }}>
+                        <MenuItem value="Male">Male</MenuItem>
+                        <MenuItem value="Female">Female</MenuItem>
                     </Select>
                 </Stack>
             </Box>
