@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
+import Graph1Nash from '../images/Graph1Nash.png'
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -49,29 +50,29 @@ function GraphVisualization() {
             <Typography gutterBottom variant="h6" component="div"
                 style={{
                     fontWeight: 'bold', textAlign: 'left',
-                    marginTop: 50, marginLeft: 290
+                    marginTop: 50, marginLeft: 115
                 }}>
                 Police Stops: Frequency and Outcome
             </Typography>
 
-            <Box sx={{ width: '100%' }}>
+            <Box sx={{ width: '100%', marginLeft: 4}}>
                 <Grid container rowSpacing={0.5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                    <Grid item xs={6}>
+                    <Grid item md={5}>
                         <Item>
                             Description
                             & 
                         Findings</Item>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item  md={5}>
                         <Item>Bar graph:
 Find highest 3 precincts (by # of stops) each year and determine % of total stops that they accounted for that year</Item>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item  md={5}>
                         <Item>Bar graph:
 Out of all stops in a year, what percentage of stops resulted in each of the three outcomes (warning, citation, arrest)? Look for differences over the years</Item>
                     </Grid>
-                    <Grid item xs={6}>
-                        <Item>4</Item>
+                    <Grid item  md={5}>
+                        <Item><img src={Graph1Nash} className = "graphImg"></img></Item>
                     </Grid>
                 </Grid>
             </Box>

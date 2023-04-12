@@ -5,6 +5,16 @@ function Header() {
         <div className="Header">
             <p className="headerLogoText"><a className="noLink" href="/">Nashville Police Data</a></p>
             <Button
+            href="/queryReport"
+            sx=
+            {{mt: -1, mr: 6, 
+            fontWeight: 700, fontSize: 23, 
+            color: "white", 
+            ":hover":{color: "#D9D9D9"}}}>
+                Query<br/>Report
+            </Button>
+            
+            <Button
             href="/graphVisualization"
             sx=
             {{mt: -1, mr: 6, 
