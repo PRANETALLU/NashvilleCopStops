@@ -1,5 +1,6 @@
 import { CardContent, Typography } from '@mui/material';
 import Stack from '@mui/material/Stack';
+import Case from '../components/Case';
 
 function QueryReport() {
     return (
@@ -97,6 +98,7 @@ function QueryReport() {
                     Female
                 </Typography>
             </Stack>
+            <Case />
         </div>
     );
 }
