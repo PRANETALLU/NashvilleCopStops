@@ -134,7 +134,7 @@ function DatabaseSearch() {
           </Typography>
           <TextField
             size="small"
-            name="location"
+            name="address"
             sx={{ width: "150px", marginLeft: 1.5 }}
             value={stopInfo.address}
             onChange={handleStopInfoChange}
@@ -146,7 +146,7 @@ function DatabaseSearch() {
           </Typography>
           <Select
             size="small"
-            name="precinct"
+            name="precinctId"
             sx={{ width: "150px", marginLeft: 1.5 }}
             value={stopInfo.precinctId}
             onChange={handleStopInfoChange}
@@ -179,7 +179,7 @@ function DatabaseSearch() {
           </Typography>
           <TextField
             size="small"
-            name="zone"
+            name="zoneCode"
             sx={{ width: "150px", marginLeft: 1.5 }}
             value={stopInfo.zoneCode}
             onChange={handleStopInfoChange}
