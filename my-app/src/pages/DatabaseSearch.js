@@ -14,16 +14,15 @@ import { useState } from 'react';
 function DatabaseSearch() {
 
     const [stopInfo, setStopInfo] = useState({
-        day: "",
-        month: "",
-        hour: "",
-        min: "",
-        time: "",
-        location: "",
-        precinct: "",
-        reportingArea: "",
-        zone: "",
-        officerID: "",
+        day: null,
+        month: null,
+        hour: null,
+        min: null,
+        location: null,
+        precinct: null,
+        reportingArea: null,
+        zone: null,
+        officerID: null,
     });
     
     const handleStopInfoChange = (event) => {
@@ -43,6 +42,13 @@ function DatabaseSearch() {
         setSubjectInfo({ ...subjectInfo, [name]: value });
         console.log(subjectInfo);
     }
+
+    //function to post subjectInfo and stopInfo to backend
+    const handleSearch = () => {
+        
+
+    }
+
 
     return (
         <div className="DatabaseSearch">
@@ -145,6 +151,23 @@ function DatabaseSearch() {
                         onChange = {handleStopInfoChange}>
                     </TextField>
                 </Stack>
+                {/* <Stack direction="row" marginLeft={2} marginTop={2}>
+                    <Typography fontSize={15} marginTop={1}>
+                        Reason For Stop
+                    </Typography>
+                    <Select size="small" name = "reason" sx={{ width: "250px", marginLeft: 1.5 }}
+                        value={stopInfo.reason}
+                        onChange={handleStopInfoChange}>
+                        <MenuItem value="A">seatbelt violation</MenuItem>
+                        <MenuItem value="B">parking violation</MenuItem>
+                        <MenuItem value="C">vehicle equipment violation</MenuItem>
+                        <MenuItem value="D">moving traffic violation</MenuItem>
+                        <MenuItem value="E">registration</MenuItem>
+                        <MenuItem value="F">child restraint</MenuItem>
+                        <MenuItem value="G">investigative stop</MenuItem>
+                        <MenuItem value="H">safety violation</MenuItem>
+                    </Select>
+                </Stack> */}
             </Box>
 
             <Box sx={{
