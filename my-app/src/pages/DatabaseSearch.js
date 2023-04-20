@@ -18,11 +18,11 @@ function DatabaseSearch() {
         month: null,
         hour: null,
         min: null,
-        location: null,
-        precinct: null,
-        reportingArea: null,
-        zone: null,
-        officerID: null,
+        address: null,  // done
+        precinctId: null, // done
+        reportingArea: null, // done
+        zoneCode: null,  // done
+        officerID: null, // done
     });
     
     const handleStopInfoChange = (event) => {
@@ -32,9 +32,9 @@ function DatabaseSearch() {
     }
 
     const [subjectInfo, setSubjectInfo] = useState({
-        age: "",
-        race: "",
-        sex: "",
+        age: "", // done
+        race: "", // done
+        sex: "", // done
     });
 
     const handleSubjectInfoChange = (event) => {
@@ -44,8 +44,33 @@ function DatabaseSearch() {
     }
 
     //function to post subjectInfo and stopInfo to backend
-    const handleSearch = () => {
+    const handleSearch = async () => {
         
+        var address = stopInfo.address;
+        var officerID = stopInfo.officerID;
+        var precinctId = stopInfo.precinctId;
+        var reportingArea = stopInfo.reportingArea; 
+        var zoneCode = stopInfo.zoneCode; 
+
+        var age = subjectInfo.age;
+        var race = subjectInfo.race; 
+        var sex = subjectInfo.sex;
+
+        const response = await fetch('http://localhost:8080/api/v1/SearchCriteria/find', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            //credentials: 'include',
+            body: JSON.stringify({
+               address,
+               officerID,
+               precinctId, 
+               reportingArea,
+               zoneCode,
+               age, 
+               race, 
+               sex
+            }),
+        });
 
     }
 
@@ -103,7 +128,7 @@ function DatabaseSearch() {
                         Location
                     </Typography>
                     <TextField size="small" name="location" sx={{ width: "150px", marginLeft: 1.5 }}
-                        value = {stopInfo.location}
+                        value = {stopInfo.address}
                         onChange = {handleStopInfoChange}>
                     </TextField>
                 </Stack>
@@ -112,7 +137,7 @@ function DatabaseSearch() {
                         Precinct
                     </Typography>
                     <Select size="small" name="precinct" sx={{ width: "150px", marginLeft: 1.5 }}
-                        value = {stopInfo.precinct}
+                        value = {stopInfo.precinctId}
                         onChange = {handleStopInfoChange}>
                             <MenuItem value="1">1</MenuItem>
                             <MenuItem value="2">2</MenuItem>
@@ -138,7 +163,7 @@ function DatabaseSearch() {
                         Zone
                     </Typography>
                     <TextField size="small" name="zone" sx={{ width: "150px", marginLeft: 1.5 }}
-                        value = {stopInfo.zone}
+                        value = {stopInfo.zoneCode}
                         onChange = {handleStopInfoChange}>
                     </TextField>
                 </Stack>
