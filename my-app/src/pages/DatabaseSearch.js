@@ -10,8 +10,11 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
 
 function DatabaseSearch() {
+  const navigate = useNavigate();
   const [stopInfo, setStopInfo] = useState({
     date: null,
     time: null,
@@ -74,6 +77,14 @@ function DatabaseSearch() {
         }),
       }
     );
+
+    if(response.status === 200) {
+        navigate("/queryReport");
+    }
+    else {
+        console.log("This is not working");
+        console.log(response.status);
+    }
   };
 
   return (
@@ -289,6 +300,7 @@ function DatabaseSearch() {
       <Button
         variant="contained"
         size="large"
+        onClick={handleSearch}
         sx={{
           marginTop: 2,
           marginBottom: 4,
