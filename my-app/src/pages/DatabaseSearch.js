@@ -24,7 +24,6 @@ function DatabaseSearch() {
         reportingArea: "",
         zone: "",
         officerID: "",
-        reasonForStop: ""
     });
     
     const handleStopInfoChange = (event) => {
@@ -42,6 +41,7 @@ function DatabaseSearch() {
     const handleSubjectInfoChange = (event) => {
         const { name, value } = event.target;
         setSubjectInfo({ ...subjectInfo, [name]: value });
+        console.log(subjectInfo);
     }
 
     return (
@@ -96,11 +96,10 @@ function DatabaseSearch() {
                     <Typography fontSize={15} marginTop={1}>
                         Location
                     </Typography>
-                    <Select size="small" name="location" sx={{ width: "150px", marginLeft: 1.5 }}
+                    <TextField size="small" name="location" sx={{ width: "150px", marginLeft: 1.5 }}
                         value = {stopInfo.location}
                         onChange = {handleStopInfoChange}>
-                        <MenuItem value="Street">Street</MenuItem>
-                    </Select>
+                    </TextField>
                 </Stack>
                 <Stack direction="row" marginLeft={2} marginTop={2}>
                     <Typography fontSize={15} marginTop={1}>
@@ -109,43 +108,42 @@ function DatabaseSearch() {
                     <Select size="small" name="precinct" sx={{ width: "150px", marginLeft: 1.5 }}
                         value = {stopInfo.precinct}
                         onChange = {handleStopInfoChange}>
+                            <MenuItem value="1">1</MenuItem>
+                            <MenuItem value="2">2</MenuItem>
+                            <MenuItem value="3">3</MenuItem>
+                            <MenuItem value="4">4</MenuItem>
+                            <MenuItem value="5">5</MenuItem>
+                            <MenuItem value="6">6</MenuItem>
+                            <MenuItem value="7">7</MenuItem>
+                            <MenuItem value="8">8</MenuItem>
                     </Select>
                 </Stack>
                 <Stack direction="row" marginLeft={2} marginTop={2}>
                     <Typography fontSize={15} marginTop={1}>
                         Reporting Area
                     </Typography>
-                    <Select size="small" name="reportingArea" sx={{ width: "150px", marginLeft: 1.5 }}
+                    <TextField size="small" name="reportingArea" sx={{ width: "150px", marginLeft: 1.5 }}
                         value = {stopInfo.reportingArea}
                         onChange = {handleStopInfoChange}>
-                    </Select>
+                    </TextField>
                 </Stack>
                 <Stack direction="row" marginLeft={2} marginTop={2}>
                     <Typography fontSize={15} marginTop={1}>
                         Zone
                     </Typography>
-                    <Select size="small" name="zone" sx={{ width: "150px", marginLeft: 1.5 }}
+                    <TextField size="small" name="zone" sx={{ width: "150px", marginLeft: 1.5 }}
                         value = {stopInfo.zone}
                         onChange = {handleStopInfoChange}>
-                    </Select>
+                    </TextField>
                 </Stack>
                 <Stack direction="row" marginLeft={2} marginTop={2}>
                     <Typography fontSize={15} marginTop={1}>
                         Officer ID (Hashed)
                     </Typography>
-                    <Select size="small" name="officerID" sx={{ width: "150px", marginLeft: 1.5 }}
+                    <TextField size="small" name="officerID" sx={{ width: "150px", marginLeft: 1.5 }}
                         value = {stopInfo.officerID}
                         onChange = {handleStopInfoChange}>
-                    </Select>
-                </Stack>
-                <Stack direction="row" marginLeft={2} marginTop={2}>
-                    <Typography fontSize={15} marginTop={1}>
-                        Reason For Stop
-                    </Typography>
-                    <Select size="small" name="reasonForStop" sx={{ width: "150px", marginLeft: 1.5 }}
-                        value = {stopInfo.reasonForStop}
-                        onChange = {handleStopInfoChange}>
-                    </Select>
+                    </TextField>
                 </Stack>
             </Box>
 
@@ -197,120 +195,7 @@ function DatabaseSearch() {
                     </Select>
                 </Stack>
             </Box>
-
-            <Box sx={{
-                backgroundColor: "#D3D3D3",
-                width: 1000,
-                height: 560,
-                marginLeft: "20%",
-                marginTop: "2%"
-            }}>
-                <Typography gutterBottom variant="h5" component="div"
-                    style={{
-                        textDecoration: 'underline', fontWeight: 'bold', textAlign: 'left',
-                        marginLeft: 15
-                    }}>
-                    Outcome
-                </Typography>
-                <Stack direction="row" marginLeft={2} marginTop={2}>
-                    <Typography fontSize={15} marginTop={1}>
-                        Outcome
-                    </Typography>
-                    <Select size="small" sx={{ width: "150px", marginLeft: 1.5 }}>
-                    </Select>
-                </Stack>
-                <Stack direction="row" marginLeft={2} marginTop={2}>
-                    <Typography fontSize={15} marginTop={1.25}>
-                        Contraband Found
-                    </Typography>
-                    <RadioGroup
-                        row
-                        sx={{marginLeft:2, fontSize: 1}}
-                    >
-                        <FormControlLabel value="true" control={<Radio />} label="True" />
-                        <FormControlLabel value="false" control={<Radio />} label="False"/>
-                    </RadioGroup>
-                </Stack>
-                <Stack direction="row" marginLeft={2} marginTop={2}>
-                    <Typography fontSize={15} marginTop={1.25}>
-                        Drugs
-                    </Typography>
-                    <RadioGroup
-                        row
-                        sx={{marginLeft:2, fontSize: 1}}
-                    >
-                        <FormControlLabel value="true" control={<Radio />} label="True" />
-                        <FormControlLabel value="false" control={<Radio />} label="False"/>
-                    </RadioGroup>
-                </Stack>
-                <Stack direction="row" marginLeft={2} marginTop={2}>
-                    <Typography fontSize={15} marginTop={1.25}>
-                        Weapons
-                    </Typography>
-                    <RadioGroup
-                        row
-                        sx={{marginLeft:2, fontSize: 1}}
-                    >
-                        <FormControlLabel value="true" control={<Radio />} label="True" />
-                        <FormControlLabel value="false" control={<Radio />} label="False"/>
-                    </RadioGroup>
-                </Stack>
-                <Stack direction="row" marginLeft={2} marginTop={2}>
-                    <Typography fontSize={15} marginTop={1.25}>
-                        Frisk
-                    </Typography>
-                    <RadioGroup
-                        row
-                        sx={{marginLeft:2, fontSize: 1}}
-                    >
-                        <FormControlLabel value="true" control={<Radio />} label="True" />
-                        <FormControlLabel value="false" control={<Radio />} label="False"/>
-                    </RadioGroup>
-                </Stack>
-                <Stack direction="row" marginLeft={2} marginTop={2}>
-                    <Typography fontSize={15} marginTop={1.25}>
-                        Seach Performed
-                    </Typography>
-                    <RadioGroup
-                        row
-                        sx={{marginLeft:2, fontSize: 1}}
-                    >
-                        <FormControlLabel value="true" control={<Radio />} label="True" />
-                        <FormControlLabel value="false" control={<Radio />} label="False"/>
-                    </RadioGroup>
-                </Stack>
-                <Stack direction="row" marginLeft={2} marginTop={2}>
-                    <Typography fontSize={15} marginTop={1.25}>
-                        Person
-                    </Typography>
-                    <RadioGroup
-                        row
-                        sx={{marginLeft:2, fontSize: 1}}
-                    >
-                        <FormControlLabel value="true" control={<Radio />} label="True" />
-                        <FormControlLabel value="false" control={<Radio />} label="False"/>
-                    </RadioGroup>
-                </Stack>
-                <Stack direction="row" marginLeft={2} marginTop={2}>
-                    <Typography fontSize={15} marginTop={1.25}>
-                        Vehicle
-                    </Typography>
-                    <RadioGroup
-                        row
-                        sx={{marginLeft:2, fontSize: 1}}
-                    >
-                        <FormControlLabel value="true" control={<Radio />} label="True" />
-                        <FormControlLabel value="false" control={<Radio />} label="False"/>
-                    </RadioGroup>
-                </Stack>
-                <Stack direction="row" marginLeft={2} marginTop={2}>
-                    <Typography fontSize={15} marginTop={1}>
-                        Basis
-                    </Typography>
-                    <Select size="small" sx={{ width: "150px", marginLeft: 1.5 }}>
-                    </Select>
-                </Stack>
-            </Box>
+            
             <Button variant="contained" size="large" 
             sx={{marginTop: 2, marginBottom: 4,
             width: 200, height: 50, fontSize: 30}}
