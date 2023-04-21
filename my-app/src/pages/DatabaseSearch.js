@@ -31,9 +31,9 @@ function DatabaseSearch() {
   };
 
   const [subjectInfo, setSubjectInfo] = useState({
-    age: "", // done
-    race: "", // done
-    sex: "", // done
+    age: null, // done
+    race: null, // done
+    sex: null, // done
   });
 
   const handleSubjectInfoChange = (event) => {
@@ -61,23 +61,30 @@ function DatabaseSearch() {
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        //credentials: 'include',
         body: JSON.stringify({
-          date,
-          time,
-          address,
-          officerId,
-          precinctId,
-          reportingArea,
-          zoneCode,
-          age,
-          race,
-          sex,
+          policeOfficer: {
+            officerId,
+            precinctId,
+            reportingArea,
+            zoneCode,
+          },
+          subject: {
+            race,
+            age,
+            sex,
+          },
+          setting: {
+            stopDate: date,
+            stopTime: time,
+            address,
+          },
         }),
       }
     );
 
     if (response.status === 200) {
+      const data = await response.json();
+      console.log(data);
       navigate("/queryReport");
     } else {
       console.log("This is not working");
@@ -200,9 +207,9 @@ function DatabaseSearch() {
           </Typography>
           <TextField
             size="small"
-            name="officerID"
+            name="officerId"
             sx={{ width: "150px", marginLeft: 1.5 }}
-            value={stopInfo.officerID}
+            value={stopInfo.officerId}
             onChange={handleStopInfoChange}
           ></TextField>
         </Stack>
