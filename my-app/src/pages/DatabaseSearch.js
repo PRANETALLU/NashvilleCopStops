@@ -10,8 +10,7 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 function DatabaseSearch() {
   const navigate = useNavigate();
@@ -22,7 +21,7 @@ function DatabaseSearch() {
     precinctId: null, // done
     reportingArea: null, // done
     zoneCode: null, // done
-    officerID: null, // done
+    officerId: null, // done
   });
 
   const handleStopInfoChange = (event) => {
@@ -48,7 +47,7 @@ function DatabaseSearch() {
     var time = stopInfo.time;
     var date = stopInfo.date;
     var address = stopInfo.address;
-    var officerID = stopInfo.officerID;
+    var officerId = stopInfo.officerId;
     var precinctId = stopInfo.precinctId;
     var reportingArea = stopInfo.reportingArea;
     var zoneCode = stopInfo.zoneCode;
@@ -67,7 +66,7 @@ function DatabaseSearch() {
           date,
           time,
           address,
-          officerID,
+          officerId,
           precinctId,
           reportingArea,
           zoneCode,
@@ -78,12 +77,11 @@ function DatabaseSearch() {
       }
     );
 
-    if(response.status === 200) {
-        navigate("/queryReport");
-    }
-    else {
-        console.log("This is not working");
-        console.log(response.status);
+    if (response.status === 200) {
+      navigate("/queryReport");
+    } else {
+      console.log("This is not working");
+      console.log(response.status);
     }
   };
 
