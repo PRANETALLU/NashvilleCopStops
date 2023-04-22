@@ -102,8 +102,31 @@ function DatabaseSearch() {
     }
   };
 
+  const handleCount = async () => {
+    const response = await fetch('http://localhost:3000/api/v1/Subjects/totalTuples', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    })
+    const data = await response.json();
+    console.log("number" + data);
+  };
+
   return (
     <div className="DatabaseSearch">
+      <Button
+        variant="contained"
+        size="large"
+        onClick={handleCount}
+        sx={{
+          marginTop: 2,
+          marginBottom: 4,
+          width: 200,
+          height: 50,
+          fontSize: 30,
+        }}
+      >
+        SEARCH
+      </Button>
       <Box
         sx={{
           backgroundColor: "#D3D3D3",
