@@ -44,6 +44,16 @@ function DatabaseSearch() {
 
   //function to post subjectInfo and stopInfo to backend
   const handleSearch = async () => {
+    if (stopInfo.time == "") {stopInfo.time = null;}
+    if (stopInfo.date == "") {stopInfo.date = null;}
+    if (stopInfo.address == "") {stopInfo.address = null;}
+    if (stopInfo.officerId == "") {stopInfo.officerId = null;}
+    if (stopInfo.precinctId == "") {stopInfo.precinctId = null;}
+    if (stopInfo.reportingArea == "") {stopInfo.reportingArea = null;}
+    if (stopInfo.zoneCode == "") {stopInfo.zoneCode = null;}
+    if (subjectInfo.age == "") {subjectInfo.age = null;}
+    if (subjectInfo.race == "") {subjectInfo.race = null;}
+    if (subjectInfo.sex == "") {subjectInfo.sex = null;}
     var time = stopInfo.time;
     var date = stopInfo.date;
     var address = stopInfo.address;
@@ -279,10 +289,10 @@ function DatabaseSearch() {
             value={setSubjectInfo.race}
             onChange={handleSubjectInfoChange}
           >
-            <MenuItem value="White">White</MenuItem>
-            <MenuItem value="Black">Black</MenuItem>
-            <MenuItem value="Hispanic">Hispanic</MenuItem>
-            <MenuItem value="Other">Other</MenuItem>
+            <MenuItem value="white">White</MenuItem>
+            <MenuItem value="black">Black</MenuItem>
+            <MenuItem value="hispanic">Hispanic</MenuItem>
+            <MenuItem value="other">Other</MenuItem>
           </Select>
         </Stack>
         <Stack direction="row" marginLeft={2} marginTop={2}>
@@ -296,8 +306,8 @@ function DatabaseSearch() {
             value={subjectInfo.sex}
             onChange={handleSubjectInfoChange}
           >
-            <MenuItem value="Male">Male</MenuItem>
-            <MenuItem value="Female">Female</MenuItem>
+            <MenuItem value="male">Male</MenuItem>
+            <MenuItem value="female">Female</MenuItem>
           </Select>
         </Stack>
       </Box>
