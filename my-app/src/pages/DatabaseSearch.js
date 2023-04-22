@@ -44,16 +44,36 @@ function DatabaseSearch() {
 
   //function to post subjectInfo and stopInfo to backend
   const handleSearch = async () => {
-    if (stopInfo.time == "") {stopInfo.time = null;}
-    if (stopInfo.date == "") {stopInfo.date = null;}
-    if (stopInfo.address == "") {stopInfo.address = null;}
-    if (stopInfo.officerId == "") {stopInfo.officerId = null;}
-    if (stopInfo.precinctId == "") {stopInfo.precinctId = null;}
-    if (stopInfo.reportingArea == "") {stopInfo.reportingArea = null;}
-    if (stopInfo.zoneCode == "") {stopInfo.zoneCode = null;}
-    if (subjectInfo.age == "") {subjectInfo.age = null;}
-    if (subjectInfo.race == "") {subjectInfo.race = null;}
-    if (subjectInfo.sex == "") {subjectInfo.sex = null;}
+    if (stopInfo.time == "") {
+      stopInfo.time = null;
+    }
+    if (stopInfo.date == "") {
+      stopInfo.date = null;
+    }
+    if (stopInfo.address == "") {
+      stopInfo.address = null;
+    }
+    if (stopInfo.officerId == "") {
+      stopInfo.officerId = null;
+    }
+    if (stopInfo.precinctId == "") {
+      stopInfo.precinctId = null;
+    }
+    if (stopInfo.reportingArea == "") {
+      stopInfo.reportingArea = null;
+    }
+    if (stopInfo.zoneCode == "") {
+      stopInfo.zoneCode = null;
+    }
+    if (subjectInfo.age == "") {
+      subjectInfo.age = null;
+    }
+    if (subjectInfo.race == "") {
+      subjectInfo.race = null;
+    }
+    if (subjectInfo.sex == "") {
+      subjectInfo.sex = null;
+    }
     var time = stopInfo.time;
     var date = stopInfo.date;
     var address = stopInfo.address;
@@ -103,10 +123,13 @@ function DatabaseSearch() {
   };
 
   const handleCount = async () => {
-    const response = await fetch('http://localhost:3000/api/v1/Subjects/totalTuples', {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' }
-    })
+    const response = await fetch(
+      "http://localhost:8080/api/v1/Subjects/totalTuples",
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     const data = await response.json();
     console.log("number" + data);
   };
