@@ -449,7 +449,7 @@ function DatabaseSearch() {
       >
         SEARCH
       </Button>
-      {caseList.length > 0 ? caseListed : searchClick ? <p>No Queries</p> : <p></p>}
+      {caseList.length > 0 ? caseListed : searchClick ? <Typography sx={{marginBottom: 4, fontWeight: "bold", fontFamily: "Open Sans", fontSize: 30}}>No Queries</Typography> : <p></p>}
       {/*<Case stopIDs={12} age={13} race={"White"} sex={"Male"} address={"dssd"} precinctID={1}
             reportArea={1} zoneC={12} officerID={12}/>*/}
     </div>
