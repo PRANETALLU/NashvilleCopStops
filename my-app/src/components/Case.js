@@ -2,7 +2,7 @@ import { CardContent, Typography } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 
-const Case = () => {
+const Case = (props) => {
     return (
         <div className="Case">
             <Box sx={{
@@ -20,7 +20,7 @@ const Case = () => {
                             marginTop: 10, marginLeft: 10,
                             fontSize: 22
                         }}>
-                        Case #:
+                        Stop #:
                     </Typography>
                     <Typography gutterBottom variant="body1" component="div"
                         style={{
@@ -28,7 +28,7 @@ const Case = () => {
                             marginTop: 10, marginLeft: 5,
                             fontSize: 22
                         }}>
-                        4324234
+                        {props.stopIDs}
                     </Typography>
                 </Stack>
 
@@ -42,7 +42,7 @@ const Case = () => {
                             }}>
                             Subject
                         </Typography>
-                        <Stack direction="row">
+                        {/*<Stack direction="row">
                             <Typography gutterBottom variant="body2" component="div"
                                 style={{
                                     fontWeight: 'bold',
@@ -61,7 +61,7 @@ const Case = () => {
                                 }}>
                                 Pranet
                             </Typography>
-                        </Stack>
+                            </Stack>*/}
                         <Stack direction="row">
                             <Typography gutterBottom variant="body2" component="div"
                                 style={{
@@ -79,7 +79,7 @@ const Case = () => {
                                     textAlign: 'left',
                                     fontSize: 18
                                 }}>
-                                13
+                                {props.age}
                             </Typography>
                         </Stack>
                         <Stack direction="row">
@@ -99,7 +99,7 @@ const Case = () => {
                                     textAlign: 'left',
                                     fontSize: 18
                                 }}>
-                                White
+                                {props.race}
                             </Typography>
                         </Stack>
                         <Stack direction="row">
@@ -119,7 +119,7 @@ const Case = () => {
                                     textAlign: 'left',
                                     fontSize: 18
                                 }}>
-                                Male
+                                {props.sex}
                             </Typography>
                         </Stack>
                     </Stack>
@@ -147,7 +147,7 @@ const Case = () => {
                                     marginTop: 10, marginLeft: 20,
                                     fontSize: 18
                                 }}>
-                                280 Fletcher Drive
+                                {props.address}
                             </Typography>
                         </Stack>
                         <Stack direction="row">
@@ -165,7 +165,7 @@ const Case = () => {
                                     marginTop: 10, marginLeft: 20,
                                     fontSize: 18
                                 }}>
-                                PUGH
+                                {props.precinctID}
                             </Typography>
                         </Stack>
                         <Stack direction="row">
@@ -183,7 +183,7 @@ const Case = () => {
                                     marginTop: 10, marginLeft: 20,
                                     fontSize: 18
                                 }}>
-                                170
+                                {props.reportArea}
                             </Typography>
                         </Stack>
                         <Stack direction="row">
@@ -201,7 +201,7 @@ const Case = () => {
                                     marginTop: 10, marginLeft: 20,
                                     fontSize: 18
                                 }}>
-                                170
+                                {props.zoneC}
                             </Typography>
                         </Stack>
                     </Stack>
@@ -230,25 +230,7 @@ const Case = () => {
                                 marginTop: 10, marginLeft: 10,
                                 fontSize: 18
                             }}>
-                            170
-                        </Typography>
-                    </Stack>
-                    <Stack direction="row" justifyContent="center">
-                        <Typography gutterBottom variant="body2" component="div"
-                            style={{
-                                fontWeight: 'bold',
-                                marginTop: 10,
-                                fontSize: 18
-                            }}>
-                            Name:
-                        </Typography>
-                        <Typography gutterBottom variant="body2" component="div"
-                            style={{
-                                fontWeight: 'bold',
-                                marginTop: 10, marginLeft: 10,
-                                fontSize: 18
-                            }}>
-                            Dr. Markus Schneider
+                            {props.officerID}
                         </Typography>
                     </Stack>
                 </Stack>
@@ -276,7 +258,7 @@ const Case = () => {
                                 marginTop: 10, marginLeft: 10,
                                 fontSize: 18
                             }}>
-                            Late to class
+                            {props.reason}
                         </Typography>
                     </Stack>
                     <Stack direction="row" justifyContent="center">
@@ -416,7 +398,7 @@ const Case = () => {
                             </Typography>
                         </Stack>
                     </Stack>
-                </Stack>
+                            </Stack>
                 <Stack direction="row" justifyContent="center">
                     <Typography gutterBottom variant="body2" component="div"
                         style={{
@@ -424,7 +406,7 @@ const Case = () => {
                             marginTop: 10,
                             fontSize: 18,
                         }}>
-                        Basis:
+                        Search Basis:
                     </Typography>
                     <Typography gutterBottom variant="body2" component="div"
                         style={{
@@ -434,7 +416,7 @@ const Case = () => {
                         }}>
                         NA
                     </Typography>
-                </Stack>
+                    </Stack>
             </Box>
         </div>
     );

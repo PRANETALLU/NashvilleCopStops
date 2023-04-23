@@ -11,9 +11,58 @@ import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Case from "../components/Case";
+
+
+const CaseData = {
+  outcome: {
+    stopId: null,
+    arrest: false,
+    citation: false,
+    warningIssued: false,
+  },
+  policeOfficer: {
+    stopId: null,
+    officerId: '',
+    precinctId: null,
+    reportingArea: null,
+    zoneCode: null,
+  },
+  setting: {
+    stopId: null,
+    stopDate: '',
+    stopTime: '',
+    address: '',
+    longitude: null,
+  },
+  subject: {
+    stopId: null,
+    race: '',
+    age: null,
+    sex: '',
+  },
+  subjectSearch: {
+    stopId: null,
+    officerId: '',
+    searchBasis: null,
+    friskPerformed: false,
+    searchVehicle: false,
+  },
+  violation: {
+    stopId: null,
+    officerId: null,
+    violationType: '',
+    reason: '',
+  },
+};
 
 function DatabaseSearch() {
   const navigate = useNavigate();
+  const [click, setClick] = useState(false);
+  const [num, setNum] = useState();
+
+  const [caseList, setCase] = useState([]);
+
   const [stopInfo, setStopInfo] = useState({
     date: null,
     time: null,
@@ -112,14 +161,21 @@ function DatabaseSearch() {
       }
     );
 
+    if (caseList == null) {
+      console.log("It is empty")
+    }
     if (response.status === 200) {
       const data = await response.json();
       console.log(data);
-      navigate("/queryReport");
+      setCase(data);
+      console.log("CaseList" + caseList.length);
+      //console.log("First Case: " + JSON.stringify(caseList[0]));
+      //navigate("/queryReport");
     } else {
       console.log("This is not working");
       console.log(response.status);
     }
+
   };
 
   const handleCount = async () => {
@@ -132,7 +188,16 @@ function DatabaseSearch() {
     );
     const data = await response.json();
     console.log("number" + data);
+    setNum(data);
+    setClick(true);
   };
+
+  const caseListed = caseList.map((CaseData) => {
+    return <Case stopIDs={CaseData.outcome.stopId} age={CaseData.subject.age} race={CaseData.subject.race}
+      sex={CaseData.subject.sex} address={CaseData.setting.address} precinctID={CaseData.policeOfficer.precinctId}
+      reportArea={CaseData.policeOfficer.reportingArea} zoneC={CaseData.policeOfficer.zoneCode} officerID={CaseData.policeOfficer.officerId} 
+      reason={CaseData.violation.reason}/>;
+  });
 
   return (
     <div className="DatabaseSearch">
@@ -143,13 +208,14 @@ function DatabaseSearch() {
         sx={{
           marginTop: 2,
           marginBottom: 4,
-          width: 200,
+          width: 350,
           height: 50,
           fontSize: 30,
         }}
       >
-        SEARCH
+        Total Tuples
       </Button>
+      {click ? <Typography sx={{ fontSize: 15 }}> There are {num} tuples in the database </Typography> : <Typography></Typography>}
       <Box
         sx={{
           backgroundColor: "#D3D3D3",
@@ -372,6 +438,9 @@ function DatabaseSearch() {
       >
         SEARCH
       </Button>
+      {caseList.length > 0 ? caseListed : <p></p>}
+      {/*<Case stopIDs={12} age={13} race={"White"} sex={"Male"} address={"dssd"} precinctID={1}
+            reportArea={1} zoneC={12} officerID={12}/>*/}
     </div>
   );
 }
