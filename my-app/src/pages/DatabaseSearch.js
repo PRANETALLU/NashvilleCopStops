@@ -196,7 +196,12 @@ function DatabaseSearch() {
     return <Case stopIDs={CaseData.outcome.stopId} age={CaseData.subject.age} race={CaseData.subject.race}
       sex={CaseData.subject.sex} address={CaseData.setting.address} precinctID={CaseData.policeOfficer.precinctId}
       reportArea={CaseData.policeOfficer.reportingArea} zoneC={CaseData.policeOfficer.zoneCode} officerID={CaseData.policeOfficer.officerId} 
-      reason={CaseData.violation.reason}/>;
+      reason={CaseData.violation.reason} violationType = {CaseData.violation.violationType}
+      searchV={CaseData.subjectSearch.searchVehicle} friskP={CaseData.subjectSearch.friskPerformed}
+      searchB={CaseData.subjectSearch.searchBasis} arrest={CaseData.outcome.arrest}
+      citation={CaseData.outcome.citation} warning={CaseData.outcome.warningIssued}
+      longitude={CaseData.setting.longitude} stopD={CaseData.setting.stopDate}
+      stopT={CaseData.setting.stopTime}/>;
   });
 
   return (

@@ -7,7 +7,7 @@ const Case = (props) => {
         <div className="Case">
             <Box sx={{
                 width: 800,
-                height: 800,
+                height: 900,
                 backgroundColor: 'gray',
                 marginLeft: 40,
                 marginBottom: 5
@@ -204,6 +204,60 @@ const Case = (props) => {
                                 {props.zoneC}
                             </Typography>
                         </Stack>
+                        <Stack direction="row">
+                            <Typography gutterBottom variant="body2" component="div"
+                                style={{
+                                    fontWeight: 'bold',
+                                    marginTop: 10, marginLeft: 300,
+                                    fontSize: 18
+                                }}>
+                                Longitude:
+                            </Typography>
+                            <Typography gutterBottom variant="body2" component="div"
+                                style={{
+                                    fontWeight: 'bold',
+                                    marginTop: 10, marginLeft: 20,
+                                    fontSize: 18
+                                }}>
+                                {props.longitude}
+                            </Typography>
+                        </Stack>
+                        <Stack direction="row">
+                            <Typography gutterBottom variant="body2" component="div"
+                                style={{
+                                    fontWeight: 'bold',
+                                    marginTop: 10, marginLeft: 300,
+                                    fontSize: 18
+                                }}>
+                                Stop Date:
+                            </Typography>
+                            <Typography gutterBottom variant="body2" component="div"
+                                style={{
+                                    fontWeight: 'bold',
+                                    marginTop: 10, marginLeft: 20,
+                                    fontSize: 18
+                                }}>
+                                {props.stopD}
+                            </Typography>
+                        </Stack>
+                        <Stack direction="row">
+                            <Typography gutterBottom variant="body2" component="div"
+                                style={{
+                                    fontWeight: 'bold',
+                                    marginTop: 10, marginLeft: 300,
+                                    fontSize: 18
+                                }}>
+                                Stop Time:
+                            </Typography>
+                            <Typography gutterBottom variant="body2" component="div"
+                                style={{
+                                    fontWeight: 'bold',
+                                    marginTop: 10, marginLeft: 20,
+                                    fontSize: 18
+                                }}>
+                                {props.stopT}
+                            </Typography>
+                        </Stack>
                     </Stack>
                 </Stack>
                 <Stack direction="column" justifyContent="center">
@@ -268,7 +322,7 @@ const Case = (props) => {
                                 marginTop: 10,
                                 fontSize: 18
                             }}>
-                            Outcome:
+                            Violation Type:
                         </Typography>
                         <Typography gutterBottom variant="body2" component="div"
                             style={{
@@ -276,7 +330,7 @@ const Case = (props) => {
                                 marginTop: 10, marginLeft: 10,
                                 fontSize: 18
                             }}>
-                            Arrest
+                            {props.violationType}
                         </Typography>
                     </Stack>
                 </Stack>
@@ -290,7 +344,7 @@ const Case = (props) => {
                                     textAlign: 'left',
                                     fontSize: 18,
                                 }}>
-                                Search:
+                                Search Vehicle:
                             </Typography>
                             <Typography gutterBottom variant="body2" component="div"
                                 style={{
@@ -298,7 +352,7 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 10,
                                     fontSize: 18
                                 }}>
-                                False
+                                {props.searchV}
                             </Typography>
                         </Stack>
                         <Stack direction="row">
@@ -309,7 +363,7 @@ const Case = (props) => {
                                     textAlign: 'left',
                                     fontSize: 18,
                                 }}>
-                                Person:
+                                Frisk Performed:
                             </Typography>
                             <Typography gutterBottom variant="body2" component="div"
                                 style={{
@@ -317,7 +371,7 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 10,
                                     fontSize: 18
                                 }}>
-                                False
+                                {props.friskP}
                             </Typography>
                         </Stack>
                         <Stack direction="row">
@@ -328,7 +382,7 @@ const Case = (props) => {
                                     textAlign: 'left',
                                     fontSize: 18,
                                 }}>
-                                Vehicle:
+                                Search Basis:
                             </Typography>
                             <Typography gutterBottom variant="body2" component="div"
                                 style={{
@@ -336,7 +390,7 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 10,
                                     fontSize: 18
                                 }}>
-                                False
+                                {props.searchB}
                             </Typography>
                         </Stack>
                     </Stack>
@@ -348,7 +402,7 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 150,
                                     fontSize: 18,
                                 }}>
-                                Contraband:
+                                Arrest:
                             </Typography>
                             <Typography gutterBottom variant="body2" component="div"
                                 style={{
@@ -356,7 +410,7 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 10,
                                     fontSize: 18
                                 }}>
-                                False
+                                {props.arrest}
                             </Typography>
                         </Stack>
                         <Stack direction="row">
@@ -367,7 +421,7 @@ const Case = (props) => {
                                     marginLeft: 150,
                                     fontSize: 18,
                                 }}>
-                                Drugs:
+                                Citation:
                             </Typography>
                             <Typography gutterBottom variant="body2" component="div"
                                 style={{
@@ -375,7 +429,7 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 10,
                                     fontSize: 18
                                 }}>
-                                False
+                                {props.citation}
                             </Typography>
                         </Stack>
                         <Stack direction="row">
@@ -386,7 +440,7 @@ const Case = (props) => {
                                     marginLeft: 150,
                                     fontSize: 18,
                                 }}>
-                                Weapons:
+                                Warning Issued:
                             </Typography>
                             <Typography gutterBottom variant="body2" component="div"
                                 style={{
@@ -394,29 +448,11 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 10,
                                     fontSize: 18
                                 }}>
-                                False
+                                {props.warning}
                             </Typography>
                         </Stack>
                     </Stack>
-                            </Stack>
-                <Stack direction="row" justifyContent="center">
-                    <Typography gutterBottom variant="body2" component="div"
-                        style={{
-                            fontWeight: 'bold',
-                            marginTop: 10,
-                            fontSize: 18,
-                        }}>
-                        Search Basis:
-                    </Typography>
-                    <Typography gutterBottom variant="body2" component="div"
-                        style={{
-                            fontWeight: 'bold',
-                            marginTop: 10, marginLeft: 10,
-                            fontSize: 18
-                        }}>
-                        NA
-                    </Typography>
-                    </Stack>
+                </Stack>
             </Box>
         </div>
     );
