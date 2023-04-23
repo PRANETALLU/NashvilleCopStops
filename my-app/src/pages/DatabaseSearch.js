@@ -61,6 +61,8 @@ function DatabaseSearch() {
   const [click, setClick] = useState(false);
   const [num, setNum] = useState();
 
+  const[searchClick, setSearch] = useState(false);
+
   const [caseList, setCase] = useState([]);
 
   const [stopInfo, setStopInfo] = useState({
@@ -176,7 +178,7 @@ function DatabaseSearch() {
       console.log("This is not working");
       console.log(response.status);
     }
-
+    setSearch(true);
   };
 
   const handleCount = async () => {
@@ -447,7 +449,7 @@ function DatabaseSearch() {
       >
         SEARCH
       </Button>
-      {caseList.length > 0 ? caseListed : <p>No Queries</p>}
+      {caseList.length > 0 ? caseListed : searchClick ? <p>No Queries</p> : <p></p>}
       {/*<Case stopIDs={12} age={13} race={"White"} sex={"Male"} address={"dssd"} precinctID={1}
             reportArea={1} zoneC={12} officerID={12}/>*/}
     </div>
