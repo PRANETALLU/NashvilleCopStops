@@ -9,7 +9,7 @@ const Case = (props) => {
                 width: 800,
                 height: 900,
                 backgroundColor: 'gray',
-                marginLeft: 40,
+                marginLeft: 45,
                 marginBottom: 5
             }}
             >
@@ -123,7 +123,7 @@ const Case = (props) => {
                             </Typography>
                         </Stack>
                     </Stack>
-                    <Stack direction="column">
+                    <Stack direction="column" sx={{marginRight: 2}}>
                         <Typography gutterBottom variant="body1" component="div"
                             style={{
                                 fontWeight: 'bold',
@@ -317,7 +317,7 @@ const Case = (props) => {
                     </Stack>
                 </Stack>
                 <Stack direction="row" justifyContent="center">
-                    <Stack direction="column">
+                    <Stack direction="column" sx={{marginTop: 1}}>
                         <Stack direction="row">
                             <Typography gutterBottom variant="body2" component="div"
                                 style={{
@@ -376,7 +376,7 @@ const Case = (props) => {
                             </Typography>
                         </Stack>
                     </Stack>
-                    <Stack direction="column">
+                    <Stack direction="column" sx={{marginTop: 1}}>
                         <Stack direction="row">
                             <Typography gutterBottom variant="body2" component="div"
                                 style={{
