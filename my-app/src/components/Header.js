@@ -4,7 +4,7 @@ function Header() {
     return (
         <div className="Header">
             <p className="headerLogoText"><a className="noLink" href="/">Nashville Police Data</a></p>
-            <Button
+           {/* <Button
             href="/queryReport"
             sx=
             {{mt: -1, mr: 6, 
@@ -12,7 +12,7 @@ function Header() {
             color: "white", 
             ":hover":{color: "#D9D9D9"}}}>
                 Query<br/>Report
-            </Button>
+            </Button>*/}
             
             <Button
             href="/graphVisualization"

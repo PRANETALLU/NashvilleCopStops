@@ -172,6 +172,7 @@ function DatabaseSearch() {
       //console.log("First Case: " + JSON.stringify(caseList[0]));
       //navigate("/queryReport");
     } else {
+      setCase([]);
       console.log("This is not working");
       console.log(response.status);
     }
@@ -446,7 +447,7 @@ function DatabaseSearch() {
       >
         SEARCH
       </Button>
-      {caseList.length > 0 ? caseListed : <p></p>}
+      {caseList.length > 0 ? caseListed : <p>No Queries</p>}
       {/*<Case stopIDs={12} age={13} race={"White"} sex={"Male"} address={"dssd"} precinctID={1}
             reportArea={1} zoneC={12} officerID={12}/>*/}
     </div>
