@@ -302,6 +302,7 @@ function DatabaseSearch() {
             <MenuItem value="6">6</MenuItem>
             <MenuItem value="7">7</MenuItem>
             <MenuItem value="8">8</MenuItem>
+            <MenuItem value="">N/A</MenuItem>
           </Select>
         </Stack>
         <Stack direction="row" marginLeft={2} marginTop={2}>
@@ -410,6 +411,7 @@ function DatabaseSearch() {
             <MenuItem value="black">Black</MenuItem>
             <MenuItem value="hispanic">Hispanic</MenuItem>
             <MenuItem value="other">Other</MenuItem>
+            <MenuItem value="">N/A</MenuItem>
           </Select>
         </Stack>
         <Stack direction="row" marginLeft={2} marginTop={2}>
@@ -425,6 +427,7 @@ function DatabaseSearch() {
           >
             <MenuItem value="male">Male</MenuItem>
             <MenuItem value="female">Female</MenuItem>
+            <MenuItem value="">N/A</MenuItem>
           </Select>
         </Stack>
       </Box>

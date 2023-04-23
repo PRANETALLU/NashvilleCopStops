@@ -211,24 +211,6 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 300,
                                     fontSize: 18
                                 }}>
-                                Longitude:
-                            </Typography>
-                            <Typography gutterBottom variant="body2" component="div"
-                                style={{
-                                    fontWeight: 'bold',
-                                    marginTop: 10, marginLeft: 20,
-                                    fontSize: 18
-                                }}>
-                                {props.longitude}
-                            </Typography>
-                        </Stack>
-                        <Stack direction="row">
-                            <Typography gutterBottom variant="body2" component="div"
-                                style={{
-                                    fontWeight: 'bold',
-                                    marginTop: 10, marginLeft: 300,
-                                    fontSize: 18
-                                }}>
                                 Stop Date:
                             </Typography>
                             <Typography gutterBottom variant="body2" component="div"
@@ -352,7 +334,7 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 10,
                                     fontSize: 18
                                 }}>
-                                {props.searchV}
+                                {props.searchV ? 'Yes' : 'No'}
                             </Typography>
                         </Stack>
                         <Stack direction="row">
@@ -371,7 +353,7 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 10,
                                     fontSize: 18
                                 }}>
-                                {props.friskP}
+                                {props.friskP ? 'Yes' : 'No'}
                             </Typography>
                         </Stack>
                         <Stack direction="row">
@@ -390,7 +372,7 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 10,
                                     fontSize: 18
                                 }}>
-                                {props.searchB}
+                                {props.searchB ? 'Yes' : 'No'}
                             </Typography>
                         </Stack>
                     </Stack>
@@ -410,7 +392,7 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 10,
                                     fontSize: 18
                                 }}>
-                                {props.arrest}
+                                {props.arrest ? 'Yes' : 'No'}
                             </Typography>
                         </Stack>
                         <Stack direction="row">
@@ -429,7 +411,7 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 10,
                                     fontSize: 18
                                 }}>
-                                {props.citation}
+                                {props.citation ? 'Yes' : 'No'}
                             </Typography>
                         </Stack>
                         <Stack direction="row">
@@ -448,7 +430,7 @@ const Case = (props) => {
                                     marginTop: 10, marginLeft: 10,
                                     fontSize: 18
                                 }}>
-                                {props.warning}
+                                {props.warning ? 'Yes' : 'No'}
                             </Typography>
                         </Stack>
                     </Stack>
