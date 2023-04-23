@@ -9,6 +9,13 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Graph1Nash from '../images/Graph1Nash.png'
+import averageAgeTopPrecinct from '../images/graphs/average_age_top_precincts.png'
+import cumulativePercentageOfOfficersVsStops from '../images/graphs/cumulative_percentage_of_officers_vs_stops_2012.png'
+import maleFemaleOutcomesOfStop from '../images/graphs/male_female_outcomes_of_stops.png'
+import percentageOfStopsByOutcome from '../images/graphs/percentage_of_stops_by_outcome_per_year.png'
+import percentageOfStopsByRace from '../images/graphs/search_contraband_gender_comparison.png'
+import seachesPer100Drivers from '../images/graphs/searches_per_100_drivers.png'
+import topPrecinctsByPercentageOfStops from '../images/graphs/top_3_precincts_by_percentage_of_total_stops_per_year.png'
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -136,8 +143,7 @@ Out of all stops in a year with outcome of warning or citation, what percentage 
 For each gender, what are the percentage of searches conducted conducted result in contraband, drugs, or weapons, and how have these numbers changed over time?</Item>
                     </Grid>
                     <Grid item xs={6}>
-                        <Item>Multi line graph:
-For the top 5 precincts (ranked by number of stops in a year), what is the average age of the driver stopped and how has this changed over the years?</Item>
+                        <Item> <img src = {averageAgeTopPrecinct} className = "graphImg"></img></Item>
                     </Grid>
                 </Grid>
             </Box>
