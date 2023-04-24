@@ -3,7 +3,15 @@ import Button from '@mui/material/Button';
 function Header() {
     return (
         <div className="Header">
-            <p className="headerLogoText"><a className="noLink" href="/">Nashville Police Data</a></p>
+            <Button
+            href="/"
+            sx=
+            {{mt: -1, mr: 80, 
+            fontWeight: 700, fontSize: 25, 
+            color: "white", 
+            ":hover":{color: "#D9D9D9"}}}>
+                Nashville Police Data
+            </Button>
            {/* <Button
             href="/queryReport"
             sx=

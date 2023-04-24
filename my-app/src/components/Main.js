@@ -6,6 +6,7 @@ import GeoV from '../images/geoV.png';
 import SearchV from '../images/searchV.png';
 import Box from '@mui/material/Box';
 import { CardContent, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function Main() {
     return (
@@ -13,6 +14,7 @@ function Main() {
            <p id="description">An informational database meant to help you understand the relationship between police and
                 <br />the community of Nashville, Tennessee.</p> 
             <Stack direction="row" justifyContent={'center'} marginTop={6}>
+                <Link to ="/graphVisualization">
                 <Card sx={{ backgroundColor: "white", width: 300, height: 400, boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.2)'}}>
                     <Box mt={(8)}>
                         <img src={GraphV} id="imgGraphV"></img>
@@ -26,7 +28,9 @@ function Main() {
                         </Typography>
                     </CardContent>
                 </Card>
+                </Link>
 
+                <Link to ="/geoVisualization">
                 <Card sx={{ backgroundColor: "white", width: 300, height: 400, boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.2)', ml: 8, mr: 8 }}>
                     <Box mt={(8)}>
                         <img src={GeoV} id="imgGraphV"></img>
@@ -40,7 +44,9 @@ function Main() {
                         </Typography>
                     </CardContent>
                 </Card>
+                </Link>
 
+                <Link to ="/databaseSearch">
                 <Card sx={{ backgroundColor: "white", width: 300, height: 400, boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.2)'}}>
                     <Box mt={(8)}>
                         <img src={SearchV} id="imgGraphV"></img>
@@ -54,6 +60,7 @@ function Main() {
                         </Typography>
                     </CardContent>
                 </Card>
+                </Link>
             </Stack>
         </div>
     );
