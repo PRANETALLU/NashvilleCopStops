@@ -7,10 +7,10 @@ const Case = (props) => {
         <div className="Case">
             <Box sx={{
                 width: 800,
-                height: 900,
-                backgroundColor: 'gray',
-                marginLeft: 45,
-                marginBottom: 5
+                height: 850,
+                backgroundColor: "#D3D3D3",
+                marginLeft: 55,
+                marginBottom: 5,
             }}
             >
                 <Stack direction="row">

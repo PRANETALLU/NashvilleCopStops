@@ -46,11 +46,11 @@ function GraphVisualization() {
             <Box sx={{ width: '100%', marginLeft: 4}}>
                 <Grid container rowSpacing={0.5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                     <Grid item md={5}>
-                        <Item>
+                        <Typography >
                             Description
                             & 
                         Findings 
-                        I gound tadsfalh </Item>
+                         </Typography>
                     </Grid>
                     <Grid item  md={5}>
                         <Item><img src = {topPrecinctsByPercentageOfStops} className = "" ></img></Item>
