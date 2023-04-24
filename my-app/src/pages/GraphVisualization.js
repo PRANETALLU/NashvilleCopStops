@@ -8,7 +8,6 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
-import Graph1Nash from '../images/Graph1Nash.png'
 import averageAgeTopPrecinct from '../images/graphs/average_age_top_precincts.png'
 import cumulativePercentageOfOfficersVsStops from '../images/graphs/cumulative_percentage_of_officers_vs_stops_2012.png'
 import maleFemaleOutcomesOfStop from '../images/graphs/male_female_outcomes_of_stops.png'
@@ -28,24 +27,6 @@ const Item = styled(Paper)(({ theme }) => ({
 function GraphVisualization() {
     return (
         <div className="GraphVisualization">
-            <Stack sx={{ marginLeft: 37, marginTop: 8 }}>
-                <Typography gutterBottom variant="h5" component="div"
-                    style={{
-                        fontWeight: 'bold', textAlign: 'left',
-                    }}>
-                    Location
-                </Typography>
-            </Stack>
-            <Stack sx={{ marginLeft: 35 }} direction="row">
-                <FormControl sx={{ mt: 1, ml: 1.8, width: 150 }}>
-                    <InputLabel>Location 1</InputLabel>
-                    <Select label="Location 1"></Select>
-                </FormControl>
-                <FormControl sx={{ mt: 1, ml: 1.8, width: 150 }}>
-                    <InputLabel>Location 2</InputLabel>
-                    <Select label="Location 2"></Select>
-                </FormControl>
-            </Stack>
             <Typography gutterBottom variant="h5" component="div"
                 style={{
                     fontWeight: 'bold', textAlign: 'center',
@@ -69,7 +50,7 @@ function GraphVisualization() {
                             Description
                             & 
                         Findings 
-                        Add description here </Item>
+                        I gound tadsfalh </Item>
                     </Grid>
                     <Grid item  md={5}>
                         <Item><img src = {topPrecinctsByPercentageOfStops} className = "" ></img></Item>
@@ -78,7 +59,7 @@ function GraphVisualization() {
                         <Item><img src={percentageOfStopsByOutcome} className =""></img></Item>
                     </Grid>
                     <Grid item  md={5}>
-                        <Item><img src={Graph1Nash} className = "graphImg"></img></Item>
+                        <Item><img src={cumulativePercentageOfOfficersVsStops} className = ""></img></Item>
                     </Grid>
                 </Grid>
             </Box>
