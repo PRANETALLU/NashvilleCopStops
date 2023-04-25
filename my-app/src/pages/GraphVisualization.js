@@ -13,7 +13,9 @@ import cumulativePercentageOfOfficersVsStops from '../images/graphs/cumulative_p
 import maleFemaleOutcomesOfStop from '../images/graphs/male_female_outcomes_of_stops.png'
 import percentageOfStopsByOutcome from '../images/graphs/percentage_of_stops_by_outcome_per_year.png'
 import searchContrabandGenderComparison from '../images/graphs/search_contraband_gender_comparison.png'
-import seachesPer100Drivers from '../images/graphs/searches_per_100_drivers.png'
+import searchesPer100Drivers from '../images/graphs/searches_per_100_drivers.png'
+import stopsByTimeAndRace from '../images/graphs/stop_frequency_by_time_and_race.png'
+import percentageOfStopsByRacePerYear from '../images/graphs/percentage_of_stops_by_race_per_year.png'
 import topPrecinctsByPercentageOfStops from '../images/graphs/top_3_precincts_by_percentage_of_total_stops_per_year.png'
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -30,22 +32,23 @@ function GraphVisualization() {
             <Typography gutterBottom variant="h5" component="div"
                 style={{
                     fontWeight: 'bold', textAlign: 'center',
-                    marginTop: 50, color: '#0F52BA'
+                    marginTop: 50, marginBottom: 80, color: '#0F52BA'
                 }}>
                 Understanding the Data
             </Typography>
 
-            <Typography gutterBottom variant="h6" component="div"
-                style={{
-                    fontWeight: 'bold', textAlign: 'left',
-                    marginTop: 50, marginLeft: 115, fontSize: 22
-                }}>
-                Police Stops: Frequency and Outcome
-            </Typography>
+           
 
-            <Box sx={{ width: '100%', marginLeft: 4}}>
-                <Grid container rowSpacing={0.5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                    <Grid item md={5}>
+            <Box sx={{ width: '100%', mx: 3, marginBottom: 20 }}>
+                <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                    <Grid item md={6}>
+                        <Typography gutterBottom variant="h6" component="div"
+                            style={{
+                                fontWeight: 'bold', textAlign: 'center',
+                                marginTop: 20, fontSize: 22
+                            }}>
+                            Police Stops: Frequency and Outcome
+                        </Typography>
                         <Typography >
                             <br></br>
                             We start by using complex queries to analyze the data pertaining to our data's observed
@@ -69,61 +72,74 @@ function GraphVisualization() {
 
                          </Typography>
                     </Grid>
-                    <Grid item  md={5}>
+                    <Grid item  md={6}>
                         <Item><img src = {topPrecinctsByPercentageOfStops} className = "" ></img></Item>
                     </Grid>
-                    <Grid item  md={5}>
+                    <Grid item  md={6}>
                         <Item><img src={percentageOfStopsByOutcome} className =""></img></Item>
                     </Grid>
-                    <Grid item  md={5}>
+                    <Grid item  md={6}>
                         <Item><img src={cumulativePercentageOfOfficersVsStops} className = ""></img></Item>
                     </Grid>
                 </Grid>
             </Box>
 
 
-            <Typography gutterBottom variant="h6" component="div"
-                style={{
-                    fontWeight: 'bold', textAlign: 'left',
-                    marginTop: 50, marginLeft: 290
-                }}>
-                Race and Discrimination
-            </Typography>
-
-            <Box sx={{ width: '100%' }}>
-                <Grid container rowSpacing={0.5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                    <Grid item xs={6}>
-                        <Item>
-                           1</Item>
+            <Box sx={{ width: '100%', mx: 3, marginBottom: 20 }}>
+                <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                    <Grid item md={6}>
+                        <Typography gutterBottom variant="h6" component="div"
+                            style={{
+                                fontWeight: 'bold', textAlign: 'center',
+                                marginTop: 20, fontSize: 22
+                            }}>
+                            Race and Discrimination
+                        </Typography>
+                        <Typography >
+                            <br></br>
+                            Now, we turn our attention to a popular point of focus: the relationship between the police
+                            and different racial group. We begin by looking at the graph in the top left which reveals a
+                            startling statistics: Black and Hispanic drivers are 100% more likely to be searched than white
+                            or Asian drivers. This is a shocking statistic, and it is important to note that this statistic
+                            is not necessarily indicative of racial bias. However, it does highlight a disparity in the
+                            treatment of different racial groups by the police which warrants further investigation.
+                            <br></br>
+                            Next, we allow our eyes to focus on the bottom right graph which displays the percentage of 
+                            stops by race over the years. On the surface, it is clear that the percentage of stops of white
+                            drivers far surpasses that of other races. However, when we explore U.S. Census data to understand 
+                            the demographic makeup of Nashville, we see something interesting. Nashville's population is 53.3% White,
+                            24.3% Black, 14.0% Hispanic, and 3.9% Asian. This clearly paints a different picture and highlights
+                            concerns from the above paragraph.
+                            <br></br>
+                            Finally, a look at the bottom left graph reveals that the majority of stops occur midday, after work,
+                            and close to midnight. This seems reasonable, as these are the times when people are most likely to
+                            be driving. However, it is interesting to note that the percentage of stops of Black drivers is
+                            disproportionately high during the late night hours. This is a trend that is worth exploring further.
+                         </Typography>
                     </Grid>
                     <Grid item xs={6}>
-                    <Item>
-                            Description
-                            & 
-                        Findings</Item>
+                        <Item><img src = {searchesPer100Drivers} className = "graphImg" ></img></Item>
                     </Grid>
                     <Grid item xs={6}>
-                        <Item> Multi line graph:
-Over the time of data collection, is there a difference in the average number of stops per race made during different hours of the day?</Item>
+                        <Item><img src = {stopsByTimeAndRace} className="graphImg"></img></Item>
                     </Grid>
                     <Grid item xs={6}>
-                        <Item><img src = {seachesPer100Drivers} className = ""></img></Item>
+                        <Item> <img src = {percentageOfStopsByRacePerYear} className = "graphImg"></img></Item>
                     </Grid>
                 </Grid>
             </Box>
 
-
-            <Typography gutterBottom variant="h6" component="div"
-                style={{
-                    fontWeight: 'bold', textAlign: 'left',
-                    marginTop: 50, marginLeft: 290
-                }}>
-                Gender, Age, and Inequality
-            </Typography>
             
-            <Box sx={{ width: '100%', marginLeft: 4}}>
-                <Grid container rowSpacing={0.5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                    <Grid item md={5}>
+            <Box sx={{ width: '100%', mx: 3, marginBottom: 20 }}>
+                <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                    <Grid item md={6}>
+                        <Typography gutterBottom variant="h6" component="div"
+                            style={{
+                                fontWeight: 'bold', textAlign: 'center',
+                                marginTop: 20, fontSize: 22
+                            }}>
+                            Gender, Age, and Inequality
+                        </Typography>
                         <Typography >
                             <br></br>
                             We end by analyzing the relationship between police stops, gender, and age.
